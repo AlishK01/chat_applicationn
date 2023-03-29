@@ -1,0 +1,2 @@
+# chat_applicationn
+This code consist register login form using passport js you can delete and update you account details after login and view also other than that there is a blog tab where you can add your blog as well as update your blog other than that after login you can go to the secret page and can chat . Chat application is made of socket io javascript and node js for database i uesd Mongoose
