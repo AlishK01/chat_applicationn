@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+  
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <div class="nav">
+    <ul>
+        <li><a class="private" href="/">SignUp</a></li>
+        <li><a class="private" href="/logout">Logout</a></li>
+        <li><a class="private"  href="/profile">profile</a></li>
+        <li><a class="private"  href="/blog">Add SBlog</a></li>
+        <li><a class="active"  href="#blogs">Blogs</a></li>
+
+    </ul>
+</div>
+  <h1>Blog</h1>
+  <%if (blogs.length >0){ %>
+    <% blogs.forEach(function(row){ %>
+    <tr><div class="blog">
+        <div class="bl">
+            <% if(row.image){ %>
+              
+                <img src="./uploads/<%= row.image %>" alt="profile image">
+              <% } %>
+    <br>
+    <td><%= row.id %></td><br>
+  <td><%= row.username %></td><br>
+      <td><%= row.date%></td><br><br>
+      <td><%= row.content %></td>
+    </tr>
+  </div>
+
+</div>
+<a href="/blog/<%=row.id %>/edit"> <button type="submit" class="button">Edit</button></a>
+    <% })}else{ %>
+      <tr>
+          <td colspan="6">No Record Found</td>
+          
+        </tr>
+      <% } %>
+    </div>
+</body>
+</html>

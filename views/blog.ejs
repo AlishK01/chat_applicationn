@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add Blog</title>
+  <link href="./index.css" rel="stylesheet" type="text/css">
+ 
+  </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+           
+            <li><a class="private" href="/profile">profile</a></li>
+            <li><a class="active"  target="_blank">Add Blog</a></li>
+            <li><a class="private"  href="/blogs">Blogs</a></li>
+
+        </ul>
+    </div>
+    <div class="head">
+  <p>Add Blog</p>
+  <div class="fbody">
+    <div class="br">
+  <form action="/blogs" method="post" enctype="multipart/form-data"><br><br>
+    <!-- <input type="text"id="uname" placeholder="Enter Your Name" name="title" required><br><br> -->
+    <input type="text"id="uname" placeholder="Enter Your Name" name="username" required><br><br>
+    <input type="file" id="image" name="image" required><br><br>
+    <textarea id="message" name="content" required></textarea><br><br>
+</div><br>
+    <input type="submit" id="blog"value="Add Blog">
+  </form>
+  </div>
+  </div>
+</body>
+</html>

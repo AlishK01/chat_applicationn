@@ -1,0 +1,8 @@
+.msg{
+    height: 600px;
+    margin: auto;
+    overflow-y: auto;
+    padding-left: 20px ;
+    padding-top: 20px;
+    background-color: rgb(149, 243, 174);
+  }

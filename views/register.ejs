@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Form</title>
+
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="top">
+
+
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="/">Home</a></li> 
+            <li><a href="/login">Login</a></li> 
+            <li><a class="private"  href="/blog">Add SBlog</a></li>
+            <li><a class="active"  href="#blogs">Blogs</a></li>
+        </ul>
+    </div>
+    <div class="head">
+        <p>Sign Up</p>
+        <div class="br">
+            <h1>Sign Up Form</h1>
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <input type="text" id="fname" placeholder="Firstname" name="fname" required><br><br>
+                <input type="text" id="lname" name="lname" placeholder="Lastname" required><br><br>
+                <input type="file" id="image" name="image" required><br><br>
+                <input type="text" name="username" placeholder="username"><br><br>
+                <input type="text" oninput="numberOnly(this.id)" id="phone" name="phone" placeholder="9100000000"
+                maxlength="10" required><br><br>
+                <input type="password" name="password" placeholder="password"><br><br>
+                <button>Submit</button>
+            </form>
+    </div>
+
+</body>
+
+</html>

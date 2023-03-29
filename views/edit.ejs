@@ -1,0 +1,37 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Add Blog</title>
+  <link rel="stylesheet" href="/index.css">
+ 
+  </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+           
+            <li><a class="private" href="/profile">profile</a></li>
+            <li><a class="active"  target="_blank">Add Blog</a></li>
+            <li><a class="private"  href="/blogs">Blogs</a></li>
+
+        </ul>
+    </div>
+    <div class="head">
+  <p>Edit Blog</p>
+  <div class="fbody">
+    <div class="br">
+  <form action="/blog/<%=blog.id%>/update" method="post" enctype="multipart/form-data"><br><br>
+    <!-- <h1><%=blog.id%></h1> -->
+    <input type="text"id="uname" value="<%=blog.username%>"  name="username" required><br><br>
+    <input type="file" id="image" value="<%=blog.image%>" name="image"  required><br><br>
+    <textarea id="message" value="" name="content" required><%=blog.content%></textarea><br><br>
+</div><br>
+    <button type="submit" id="blog"value="Add Blog">Update Blog</button>
+  </form>
+  </div>
+  </div>
+</body>
+</html>

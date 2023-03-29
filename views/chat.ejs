@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat App</title>
+  <link rel="stylesheet" href="/chat.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Let's Talk</h1>
+        <br>  
+    
+       <form action="/register/<%=user1.id%>/chats" method="post" enctype="multipart/form-data">
+        
+        <input id = "name" hidden name="username" value=" <%=user1.fname%>"  class="form-control" >
+        <br>
+        <div id="messages" class="msg">
+          
+        </div>
+        <textarea id = "message" class="form-control" placeholder="Your Message Here"></textarea>
+        <br>
+        <button id="send" class="btn btn-success"<a href="/mesaage.html">Send</button>
+       </form>
+    </div>
+    
+</div>
+
+</body>
+<script>
+  const socket = io();
+   $(() => {
+       $("#send").click(()=>{
+           sendMessage({name: $("#name").val(), message: $("#message").val()});
+       })
+
+       getMessages()
+   })
+   // do{
+   //   name=prompt('please enter your name: ')
+   // }while(!name)
+   
+
+   socket.on('message', addMessages)
+
+   function addMessages(message){
+       $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+   }
+
+   function getMessages(){
+     $.get('http://localhost:6501/messages', (data) => {
+       data.forEach(addMessages);
+     })
+   }
+
+   function sendMessage(message){
+     $.post('http://localhost:6501/messages', message)
+   }
+</script>
+</html>
