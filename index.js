@@ -359,9 +359,6 @@ try {
   
   
   
-  const server = http.listen(6501, () => {
-      console.log('server is running on port', server.address().port);
-  });
   
   
 
@@ -395,6 +392,10 @@ function isLoggedIn(req, res, next) {
     }
     res.redirect("/login");
 }
+
+  const server = http.listen(6501, () => {
+      console.log('server is running on port', server.address().port);
+  });
 
 
 
